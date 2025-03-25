@@ -1,4 +1,4 @@
-import {Competencia} from '../models/competenciaModel'
+import {Competencia} from '../models/competenciaModel.js'
 
 
 

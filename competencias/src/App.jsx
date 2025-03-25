@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import 'vite/modulepreload-polyfill'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
+import InicioAdmin from './IniciosSesiones/InicioAdm';
+import InicioUsuarios from './IniciosSesiones/InicioUsuario';
+import CreacionUsuario from './IniciosSesiones/CreacionUsuario';
+import ConfAdm from './IniciosSesiones/Configuracion';
+import CompetenciasCreadas from './SeccionesAdm/CompetenciasCreadas';
+import CrearCompetencia from './SeccionesAdm/CrearCompetencia';
+import Ganadores from './SeccionesAdm/Ganadores';
+import CompetenciasDisponibles from './SeccionesUsuarios/CompetenciasDisponibles';
+import CompetenciasFinalizadas from './SeccionesUsuarios/CompetenciasFinalizadas';
+import RegistroAthletas from './SeccionesUsuarios/RegistroAthletas';
+import TiempoAtletas from './SeccionesAdm/TiemposAtletas';
+import ProtectedRoute from './hooks/ProtectedRoute';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<InicioAdmin  />} />
+        <Route path='/usuarios' element={<InicioUsuarios  />} />
+        <Route path='/crearUsuario' element={<CreacionUsuario  />} />
+        <Route path='/competencias' element={<CompetenciasCreadas  />} />
+        <Route path='/competenciasDisponibles' element={<CompetenciasDisponibles  />} />
+        <Route path='/competenciasFinalizadas' element={<CompetenciasFinalizadas  />} />
+        <Route path='/registroAthletas' element={<RegistroAthletas  />} />
+        <Route element={<ProtectedRoute />}>
+        <Route path='/configuracion' element={<ConfAdm  />} />
+        <Route path='/crearCompetencia' element={<CrearCompetencia  />} />
+        <Route path='/registroTiempoAthletas' element={<TiempoAtletas  />} />
+        <Route path='/ganadores' element={<Ganadores  />} />
+        
+        </Route>
+      </Routes> 
+    </BrowserRouter> 
   )
 }
 

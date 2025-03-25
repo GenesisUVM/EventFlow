@@ -1,4 +1,4 @@
-import {RegisCompetencia} from '../models/registroCompetenciasModel.js'
+import {RegisCompetencia} from '../models/registroCompetenciaModel.js'
 
 
 

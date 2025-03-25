@@ -1,58 +1,60 @@
 import {useState} from 'react';
 import { Link} from 'react-router-dom';
 import './Forms.css'
+import axios from "axios";
 import {useForm} from 'react-hook-form'
+import { useNavigate } from "react-router-dom";
+import Form from 'react-bootstrap/Form';
+import InputField from './Forms/InputFields';
+import Button from "react-bootstrap/Button";
 
 
 function FormUsuario(){
-    /*Logica para limpiar el formulario y mostrar un mensjae de exito si se registra correctamente */
-    const [formData, setFormData] = useState({
-        correo: '',
-        contrasena:''
-    });
-    const [message, setMessage] = useState('');
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData({
-            ...formData,
-            [name]: value
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
+  
+    const onSubmit = async (data) => {
+      try {
+        const response = await axios.post("http://localhost:4000/api/login", data, {
+          withCredentials: true, // Para que guarde la cookie del token
         });
+  
+        console.log("Usuario autenticado:", response.data);
+        localStorage.setItem("user", JSON.stringify(response.data)); // Guardar usuario en localStorage
+  
+        navigate("/tablas"); // Redirigir a página protegida
+      } catch (error) {
+        console.error("Error en login:", error);
+        setError(error.response?.data?.message || "Error al iniciar sesión");
+      }
     };
-
-    /*Logica para enviar los datos del formulario a la base de datos */
-    // eslint-disable-next-line no-unused-vars
-    const { register, handleSubmit, formState: {errors}, } = useForm();
-
-    const onSubmit = handleSubmit(async(values) => {
-        console.log(values);
-        
-        event.preventDefault();
-
-        setFormData({
-            correo: '',
-            contrasena:''
-        });
-
-        // Muestra el mensaje de éxito
-        setMessage('Registrado con éxito!');
-        
-        //  Ocultar el mensaje después de unos segundos
-        setTimeout(() => {
-            setMessage('');
-        }, 3000);
-        
-    })
+  
     return(
         <div className='contForm'>
-        <form onSubmit={onSubmit} className='formUsu'>
-            <label className='label'>Ingrese Correo<input type="email" name="correo" className="input" {...register( 'correo', { require : true })} onChange={handleChange} value={formData.correo}/></label>
-            <label className='label'>Ingrese Contraseña<input type="text" name="contrasena" className="input" {...register( 'contrasena', { require : true })} onChange={handleChange} value={formData.contrasena}/></label>
-            <button type='submit' className="botonIngresar">Ingresar</button>
+        <Form onSubmit={handleSubmit(onSubmit)} className='formUsu'>
+        <InputField
+          label="Correo"
+          name="correo"
+          type="email"
+          register={register}
+          errors={errors}
+          
+        />
+        <InputField
+          label="Contraseña"
+          name="contrasena"
+          type="password"
+          register={register}
+          errors={errors}
+        />
+        <Button variant="primary" type="submit">
+          Iniciar Sesión
+        </Button>
             <Link to={'/competenciasDisponibles'} className="botonIngresar">Ingresar</Link>
     
-        </form>
-        <p>{message}</p>
+        </Form>
+        <p>{error}</p>
         <Link to={'/crearUsuario'} className="linkContraseña">Crear Usuario Nuevo</Link>
           
         </div>
