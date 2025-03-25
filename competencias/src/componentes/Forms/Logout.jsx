@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function LogoutButton() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ function LogoutButton() {
     navigate("/iniciosesion");
   };
 
-  return (<button onClick={handleLogout}>Cerrar Sesión</button>)
+  return (<Button onClick={handleLogout} variant="danger">Cerrar Sesión</Button>)
 }
 
 export default LogoutButton;

@@ -1,5 +1,5 @@
 import NavBar from "../componentes/NavBar"
-import FormAdm from "../componentes/FormAdm"
+import FormAdm from "../componentes/Forms/FormAdm"
 import Footer from "../componentes/Footer"
 import './InicioSesiones.css'
 

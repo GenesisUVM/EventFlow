@@ -1,5 +1,5 @@
 import './InicioSesiones.css'
-import ContConfig from '../componentes/ContConfiguracion'
+import ContConfig from '../componentes/ContConf'
 import FooterAdm from '../componentes/FooterAdm'
 import NavBar from '../componentes/NavBar'
 

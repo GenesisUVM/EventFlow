@@ -1,0 +1,28 @@
+.footerIniSesion , .footerAdmPerf{
+    background: #57737A;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.imgIcons{
+    width: 4.5rem;
+    cursor: pointer;
+    margin: 0.5rem 0;
+}
+.linkIcons{
+    width: 3rem;
+    margin: 1rem 0;
+}
+
+.footerAdmi{
+    width: 100%;
+    background: #57737A;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0rem;
+}

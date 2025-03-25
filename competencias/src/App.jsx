@@ -1,16 +1,15 @@
 import 'vite/modulepreload-polyfill'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
-import InicioAdmin from './IniciosSesiones/InicioAdm';
-import InicioUsuarios from './IniciosSesiones/InicioUsuario';
-import CreacionUsuario from './IniciosSesiones/CreacionUsuario';
-import ConfAdm from './IniciosSesiones/Configuracion';
+import InicioAdmin from './InicioSesiones/InicioAdm';
+import CreacionUsuario from './InicioSesiones/CreacionUsuario';
+import ConfAdm from './InicioSesiones/Configuracion';
 import CompetenciasCreadas from './SeccionesAdm/CompetenciasCreadas';
-import CrearCompetencia from './SeccionesAdm/CrearCompetencia';
+import CrearCompetencia from './SeccionesAdm/CrearCompetencias';
 import Ganadores from './SeccionesAdm/Ganadores';
 import CompetenciasDisponibles from './SeccionesUsuarios/CompetenciasDisponibles';
 import CompetenciasFinalizadas from './SeccionesUsuarios/CompetenciasFinalizadas';
-import RegistroAthletas from './SeccionesUsuarios/RegistroAthletas';
+import RegistroAthletas from './SeccionesUsuarios/RegistroAtletas';
 import TiempoAtletas from './SeccionesAdm/TiemposAtletas';
 import ProtectedRoute from './hooks/ProtectedRoute';
 
@@ -19,7 +18,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<InicioAdmin  />} />
-        <Route path='/usuarios' element={<InicioUsuarios  />} />
         <Route path='/crearUsuario' element={<CreacionUsuario  />} />
         <Route path='/competencias' element={<CompetenciasCreadas  />} />
         <Route path='/competenciasDisponibles' element={<CompetenciasDisponibles  />} />

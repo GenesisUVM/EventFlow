@@ -1,15 +1,15 @@
 import {useState} from 'react';
 import { Link} from 'react-router-dom';
-import './Forms.css'
+import './Form.css'
 import axios from "axios";
 import {useForm} from 'react-hook-form'
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
-import InputField from './Forms/InputFields';
+import InputField from './InputFields';
 import Button from "react-bootstrap/Button";
 
 
-function FormUsuario(){
+function FormAdm(){
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [error, setError] = useState("");
     const navigate = useNavigate();
@@ -61,4 +61,4 @@ function FormUsuario(){
     )
 };
 
-export default FormUsuario
+export default FormAdm;

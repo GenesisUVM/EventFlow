@@ -38,34 +38,34 @@ export const registro = async (req, res) => {
  
 };
 
-
 export const login = async (req, res) => {
-   const { correo, contrasena} = req.body;
-     
-  try{
+   const { correo, contrasena } = req.body;
 
-      const userFound = await Usuario.findOne({correo})
-      if (!userFound) return res.status(400).json({message:'Usuario no encontrado'});
+   try {
+       //  Buscar usuario en la BD por correo
+       const usuario = await Usuario.findOne({ correo });
+       if (!usuario) return res.status(404).json({ message: "Usuario no encontrado" });
 
-      const contrasenaMatch = await bcrypt.compare(contrasena, userFound.contrasena)
-      if(!contrasenaMatch) return res.status(400).json({message:'Contraseña Incorrecta'})
-  
-      const token = await createAccessToken({id: userFound._id});
-      res.cookie('token', token)
-      res.json({
-         id: userFound._id,
-         nombre_usuario: userFound.nombre_usuario,
-         usuario: userFound.usuario
-      });
- 
- 
-  }catch(error){
-     console.log(error);
-  }
- 
-  
- };
+       //  Verificar la contraseña
+       const isMatch = await bcrypt.compare(contrasena, usuario.contrasena);
+       if (!isMatch) return res.status(400).json({ message: "Contraseña incorrecta" });
 
+       //  Crear un Token JWT
+       const token = await createAccessToken({ id: usuario._id });
+
+       //  Enviar token como cookie
+       res.cookie('token', token, { httpOnly: true });
+       res.json({
+           id: usuario._id,
+           nombre_apellido: usuario.nombre_apellido,
+           rol: usuario.rol
+       });
+
+   } catch (error) {
+       console.error(error);
+       res.status(500).json({ message: "Error en el servidor" });
+   }
+};
 
  export const logout = async (req, res) =>{
    res.cookie('token', '',{

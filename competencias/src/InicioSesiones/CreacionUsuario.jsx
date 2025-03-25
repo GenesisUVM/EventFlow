@@ -1,5 +1,5 @@
 import NavBar from "../componentes/NavBar"
-import FormCreaUsuario from "../componentes/FormCrearUSuario"
+import FormCreaUsuario from "../componentes/Forms/FormCrearUsuario"
 import Footer from "../componentes/Footer"
 
 function CreacionUsuario(){

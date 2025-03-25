@@ -1,7 +1,7 @@
 import './Adm.css'
 import NavBar from '../componentes/NavBar';
 import FooterAdm from '../componentes/FooterAdm';
-import FormTiempo from '../componentes/FormTiempo';
+// import FormTiempo from '../componentes/Forms/FormTiempo';
 
 
 
@@ -10,7 +10,7 @@ function TiempoAtletas(){
         <div className='seccionTiempo'>
         <NavBar />
         <h2 className='titulos'>Registro Tiempos Atletas</h2>
-        <FormTiempo />
+        {/* <FormTiempo /> */}
         <FooterAdm />
         </div>
     )
