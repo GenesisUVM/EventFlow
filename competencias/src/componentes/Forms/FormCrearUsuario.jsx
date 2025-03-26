@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Form.css";
-import InputField from "./InputFields";
+import Campos from "./Campos";
 
 
 function FormCreaUsuario(){
@@ -42,11 +42,11 @@ const {
 
 
     return(
-        <div className='contForm'>
+      
             <Form onSubmit={handleSubmit(onSubmit)} className="registroResponsable">
         <h3>Formulario Registro Usuario</h3>
 
-        <InputField
+        <Campos
           label="Nombre"
           name="nombre"
           type="name"
@@ -54,7 +54,7 @@ const {
           errors={errors}
         />
        
-        <InputField
+        <Campos
           label="Correo"
           name="correo"
           type="email"
@@ -62,28 +62,28 @@ const {
           errors={errors}
         />
         
-        <InputField
+        <Campos
           label="Contrasena"
           name="contrasena"
           type="password"
           register={register}
           errors={errors}
         />
-        <InputField
+        <Campos
           label="Numero de Telefono"
           name="numero"
           type="number"
           register={register}
           errors={errors}
         />
-        <InputField
+        <Campos
           label="Categoria en la que compite"
           name="categoria"
           type="text"
           register={register}
           errors={errors}
         />
-         <InputField
+         <Campos
           label="Rol"
           name="rol"
           type="text"
@@ -95,8 +95,7 @@ const {
           Registrar
         </Button>
       </Form>
-            
-        </div>
+       
     )
 };
 

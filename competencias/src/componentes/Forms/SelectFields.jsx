@@ -2,7 +2,7 @@
 
 
 
-function SelectField({ label, name, options, onChange, register, errors }) {
+function SelectF({ label, name, options, onChange, register, errors }) {
     return (
         <div className="mb-3">
             <label htmlFor={name}>{label}</label>
@@ -25,4 +25,4 @@ function SelectField({ label, name, options, onChange, register, errors }) {
     );
 }
 
-export default SelectField;
+export default SelectF;

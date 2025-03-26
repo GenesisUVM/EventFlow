@@ -2,14 +2,12 @@
 import {TOKEN_SECRET} from '../conf.js'
 import jwt from 'jsonwebtoken'
 
-export function createAccessToken(payload){
-    return new Promise((resolve, reject)=>{
-        jwt.sign(
-            payload, TOKEN_SECRET,{expiresIn: '1d'},
-            (err, token) => {
-               if (err) console.log(err);
-               resolve(token)
-            }
-         );
-    })
+export const createAccessToken = (user) => {
+    return new Promise((resolve, reject) => {
+        jwt.sign(user, "secreto", { expiresIn: "1h" }, (err, token) => {
+            if (err) reject(err);
+            resolve(token);
+        });
+    });
 };
+

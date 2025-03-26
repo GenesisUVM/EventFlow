@@ -1,14 +1,14 @@
 import './Usuario.css'
-import NavBar from '../componentes/NavBar';
+import Navbar from '../componentes/Navbar';
 import FooterAdm from '../componentes/FooterAdm';
-// import FormRegistroAtletas from '../componentes/FormRegistroAtletas';
+import FormRegistroAtletas from '../componentes/Forms/FormRegistroAtletas';
 
 function RegistroAthletas(){
     return(
         <div className='registroAtletas'>
-        <NavBar />
+        <Navbar />
         <h2 className='titulosU'>Registro Atletas</h2>
-        {/* <FormRegistroAtletas /> */}
+        <FormRegistroAtletas />
         <FooterAdm />
         </div>
     )

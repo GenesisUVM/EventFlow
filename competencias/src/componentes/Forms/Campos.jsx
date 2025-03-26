@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-function InputField({ label, name, type, register, errors }) {
+function Campos({ label, name, type, register, errors }) {
     return (
         <div className="mb-3">
             <label htmlFor={name}>{label}</label>
@@ -16,4 +16,4 @@ function InputField({ label, name, type, register, errors }) {
     );
 }
 
-export default InputField;
+export default Campos;

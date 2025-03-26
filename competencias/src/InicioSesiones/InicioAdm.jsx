@@ -1,6 +1,5 @@
 import NavBar from "../componentes/NavBar"
 import FormAdm from "../componentes/Forms/FormAdm"
-import Footer from "../componentes/Footer"
 import './InicioSesiones.css'
 
 function InicioAdmin(){
@@ -9,7 +8,6 @@ function InicioAdmin(){
         <div className="inicioSesiones">
           <NavBar />
           <FormAdm />
-          <Footer />
         </div>
     )
 };

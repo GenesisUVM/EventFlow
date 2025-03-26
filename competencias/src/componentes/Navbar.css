@@ -15,7 +15,9 @@
 
 .nombre{
     font-size: 1.2rem;
-    margin: auto;
+    display: flex;
+    align-items: center;
+
 }
 
 .icon{

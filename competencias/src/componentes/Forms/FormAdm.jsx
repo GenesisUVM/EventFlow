@@ -1,12 +1,10 @@
-import {useState} from 'react';
-import { Link} from 'react-router-dom';
-import './Form.css'
+import { useForm } from "react-hook-form";
 import axios from "axios";
-import {useForm} from 'react-hook-form'
-import { useNavigate } from "react-router-dom";
-import Form from 'react-bootstrap/Form';
-import InputField from './InputFields';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Campos from "./Campos";
 
 
 function FormAdm(){
@@ -23,7 +21,7 @@ function FormAdm(){
         console.log("Usuario autenticado:", response.data);
         localStorage.setItem("user", JSON.stringify(response.data)); // Guardar usuario en localStorage
   
-        navigate("/tablas"); // Redirigir a página protegida
+        navigate("/crearCompetencia"); // Redirigir a página protegida
       } catch (error) {
         console.error("Error en login:", error);
         setError(error.response?.data?.message || "Error al iniciar sesión");
@@ -33,7 +31,8 @@ function FormAdm(){
     return(
         <div className='contForm'>
         <Form onSubmit={handleSubmit(onSubmit)} className='formUsu'>
-        <InputField
+        {error && <p className="error">{error}</p>}
+        <Campos
           label="Correo"
           name="correo"
           type="email"
@@ -41,7 +40,7 @@ function FormAdm(){
           errors={errors}
           
         />
-        <InputField
+        <Campos
           label="Contraseña"
           name="contrasena"
           type="password"
@@ -51,10 +50,8 @@ function FormAdm(){
         <Button variant="primary" type="submit">
           Iniciar Sesión
         </Button>
-            <Link to={'/competenciasDisponibles'} className="botonIngresar">Ingresar</Link>
     
         </Form>
-        <p>{error}</p>
         <Link to={'/crearUsuario'} className="linkContraseña">Crear Usuario Nuevo</Link>
           
         </div>
