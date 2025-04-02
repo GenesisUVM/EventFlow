@@ -6,7 +6,7 @@ function LogoutButton() {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    navigate("/competencias");
+    navigate("/competenciasDisponibles");
   };
 
   return (<Button onClick={handleLogout} variant="danger">Cerrar Sesión</Button>)

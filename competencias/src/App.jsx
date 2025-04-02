@@ -19,12 +19,12 @@ function App() {
       <Routes>
         <Route path='/' element={<InicioAdmin  />} />
         <Route path='/crearUsuario' element={<CreacionUsuario  />} />
-        <Route path='/competencias' element={<CompetenciasCreadas  />} />
         <Route path='/competenciasDisponibles' element={<CompetenciasDisponibles  />} />
         <Route path='/competenciasFinalizadas' element={<CompetenciasFinalizadas  />} />
         <Route path='/registroAthletas' element={<RegistroAthletas  />} />
         <Route element={<ProtectedRoute />}>
         <Route path='/configuracion' element={<ConfAdm  />} />
+        <Route path='/competencias' element={<CompetenciasCreadas  />} />
         <Route path='/crearCompetencia' element={<CrearCompetencia  />} />
         <Route path='/registroTiempoAthletas' element={<TiempoAtletas  />} />
         <Route path='/ganadores' element={<Ganadores  />} />

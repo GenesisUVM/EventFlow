@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import NavBar from '../componentes/NavBar';
-import FooterAdm from '../componentes/FooterAdm';
 import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
 import './Adm.css'
+import FooterAdm from '../componentes/FooterAdm';
 
 //Componente seccion Administrativa
 
@@ -13,10 +11,6 @@ import './Adm.css'
  function CompetenciasCreadas(){
     const [competencia, setCompetencia] = useState([]);
     const [atletas, setAtletas] = useState([]);
-    const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
     useEffect(() => {
         const fetchCompetencia = async () => {
@@ -89,24 +83,8 @@ import './Adm.css'
                 </div>
             ))}
 
-
-             <Button variant="primary" onClick={handleShow}>
-                Deja tu testimonio de nuestras habitaciones
-            </Button>
-
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <FooterAdm />
-                </Modal.Body>
-                <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                </Modal.Footer>
-            </Modal>
+        <FooterAdm />
+         
             
             
         </div>

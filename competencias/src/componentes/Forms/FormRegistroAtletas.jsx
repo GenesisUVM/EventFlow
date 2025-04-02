@@ -20,6 +20,7 @@ function FormRegistroAtletas() {
                     axios.get('http://localhost:4000/api/datosCompetencia'),
                     axios.get('http://localhost:4000/api/datosRegisrosCompetencia')
                 ]);
+                console.log("Datos recibidos del backend:", compResponse.data); 
                 setCompetencias(compResponse.data);
                 setExistingRecords(recordsResponse.data);
             } catch (error) {
@@ -42,13 +43,12 @@ function FormRegistroAtletas() {
     };
 
     const onSubmit = async (data) => {
-        if (!selectedCompetencia) {
+        if (!data.competencia) {
             setErrorMessage('Debes seleccionar una competencia.');
             return;
         }
 
-        data.competencia = selectedCompetencia; // Agregar competencia seleccionada
-
+        
         try {
             console.log("Enviando datos:", data);
             const response = await axios.post("http://localhost:4000/api/registroCompetencia", data, {
