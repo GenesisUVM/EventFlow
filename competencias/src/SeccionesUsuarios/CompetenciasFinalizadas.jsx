@@ -41,7 +41,9 @@ function CompetenciasFinalizadas(){
     return (
         <div className='ganadoresUsuarios'>
             <NavBar />
+            <div className='contGanadores' >
             <ContGanadores ganadores={ganadores} />
+            </div>
             <FooterUsuarios />
         </div>
     );
