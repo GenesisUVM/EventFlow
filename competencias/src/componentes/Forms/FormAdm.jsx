@@ -52,7 +52,7 @@ function FormAdm(){
         </Button>
     
         </Form>
-        <Link to={'/crearUsuario'} className="linkContraseña">Crear Usuario Nuevo</Link>
+        <Link to={'/crearUsuario'} className="enlaceC">Crear Usuario Nuevo</Link>
           
         </div>
     )

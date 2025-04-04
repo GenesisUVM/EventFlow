@@ -4,6 +4,8 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import Campos from './Campos';
 import SelectF from './SelectFields';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 function FormRegistroAtletas() {
     const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm();
@@ -67,7 +69,7 @@ function FormRegistroAtletas() {
 
     return (
         <div className="modalCont">
-            <form className='formModal' onSubmit={handleSubmit(onSubmit)}>
+            <Form className='formModal' onSubmit={handleSubmit(onSubmit)}>
                 <Campos 
                     label="Nombre del atleta"
                     name="nombre"
@@ -109,8 +111,8 @@ function FormRegistroAtletas() {
                     errors={errors}
                 />
 
-                <button type="submit" className='boton'>Enviar</button>
-            </form>
+                <Button type="submit" className='boton'>Enviar</Button>
+            </Form>
 
             {message && <p style={{ color: 'green' }}>{message}</p>}
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}

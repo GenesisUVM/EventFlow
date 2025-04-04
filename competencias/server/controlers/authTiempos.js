@@ -37,7 +37,7 @@ export const tiempo = async (req, res) => {
       const ganadores = await Tiempo.find()
          .populate({ path: 'nombre', select: 'nombre' }) 
          .populate({ path: 'competencia', select: 'competencia' });
-
+         console.log("Ganadores encontrados:", ganadores);
       res.json(ganadores);
    } catch (error) {
       console.error('Error al obtener los ganadores:', error);

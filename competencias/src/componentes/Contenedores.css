@@ -3,12 +3,12 @@
 .contConfiguracion{
     position: relative;
     width: 65%;
-    background: #C2FCF7;
-    padding: 1.5rem;
+    background: #C2FCF7 !important;
+    padding: 1rem;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     margin: auto;
-    border-radius: 2rem;
+    border-radius: 2rem !important;
     align-items: center;
     justify-items: center;
 
@@ -42,7 +42,7 @@
     width: 60%;
     display: flex;
     position: relative;
-    background: #85BDBF;
+    background: #85BDBF !important;
     margin: auto;
     flex-direction: column;
     border-radius: 2rem;
@@ -51,6 +51,7 @@
     margin-bottom: 2rem;
     
 }
+
 
 
 @media only screen and (min-width: 768px){
@@ -65,11 +66,17 @@
     .contCCreadas .textoCompetencias{
         font-size: 1.8rem;
     }
+    .listaAtletas{
+        font-size: 1.5rem !important;
+        width: 70%;
+        margin: auto;
+    }
 }
 
 @media only screen and (min-width: 1200px){
     .contConfiguracion{
         width: 45%;
+        top: 2rem;
     }
     .contCCreadas{
         width: 50%;
@@ -77,5 +84,8 @@
     }
     .contCCreadas .textoCompetencias{
         font-size: 2rem;
+    }
+    .listaAtletas{
+        font-size: 2rem !important;
     }
 }

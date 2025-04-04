@@ -1,14 +1,21 @@
-import mongoose from "mongoose";
+// models/tiemposAtletasModel.js
+import mongoose from 'mongoose';
 
-
-const TiemposSchema = new mongoose.Schema({
-    competencia:{
-        type: mongoose.Schema.Types.ObjectId,  ref: 'Competencia', required: true, trim: true,
-    },nombre: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Atleta', required: true, trim: true,
-    },tiempo: {
-        type: mongoose.Schema.Types.String, required: true, trim: true,
-    }
+const tiempoSchema = new mongoose.Schema({
+  competencia: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Competencia',
+    required: true
+  },
+  nombre: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'RegisCompetencia',
+    required: true
+  },
+  tiempo: {
+    type: String,
+    required: true
+  }
 });
 
-export  const Tiempo = mongoose.model("TiempoAtleta", TiemposSchema);
+export const Tiempo = mongoose.model('Tiempo', tiempoSchema);

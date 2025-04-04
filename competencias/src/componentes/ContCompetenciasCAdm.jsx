@@ -19,7 +19,7 @@ function ContCompetenciasAdm({competencia, categoria, sexo, fecha,tiempo_limite,
             <Card.Text className='textoCompetencias'>Categoria de {categoria}</Card.Text>
             <Card.Text className='textoCompetencias'>Sexo {sexo}</Card.Text>
             <Card.Text className='textoCompetencias'>Lista de Competidores</Card.Text>
-            <ul>
+            <ul className='listaAtletas'>
                 {atletas.map(atleta => (
                     <li key={atleta._id}>
                         {atleta.nombre} - {atleta.edad} años

@@ -48,6 +48,7 @@ function FormTiempo() {
 
     return (
         <Form onSubmit={handleSubmit(onSubmit)} className='formTiempo'>
+            <h2 >Registro Tiempos Atletas</h2>
             <Form.Group>
                 <Form.Label>Selecciona la Competencia en la que participó el atleta</Form.Label>
                 <Form.Select {...register('competencia', { required: true })} onChange={handleSelectChangeComp}>

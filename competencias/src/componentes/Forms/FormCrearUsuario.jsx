@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "./Form.css";
 import Campos from "./Campos";
 
 
@@ -42,8 +41,8 @@ const {
 
 
     return(
-      
-            <Form onSubmit={handleSubmit(onSubmit)} className="registroResponsable">
+      <div className='contForm'>
+            <Form onSubmit={handleSubmit(onSubmit)} className="formUsu">
         <h3>Formulario Registro Usuario</h3>
 
         <Campos
@@ -95,6 +94,7 @@ const {
           Registrar
         </Button>
       </Form>
+      </div>
        
     )
 };

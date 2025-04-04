@@ -67,8 +67,9 @@ const onSubmit = async (data) => {
  
     
     return(
-   
             <Form onSubmit={handleSubmit(onSubmit)} className='formCrearCompetencia'>
+              
+            <h2 >Crear Competencia</h2>
                 <SelectF
                     label="competencias"
                     name="competencia"
@@ -117,7 +118,6 @@ const onSubmit = async (data) => {
                 
             </Form>
 
-            
      
     )
 };

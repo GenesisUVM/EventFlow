@@ -1,5 +1,8 @@
 .formUsu{
-    width: 90%;
+    width: 100%;
+    background: #85BDBF;
+    border-radius: 1rem;
+    padding: 1.5rem;
 }
 .formTiempo{
     display: flex;
@@ -7,13 +10,26 @@
     margin: auto;
     position: relative;
     top: 25%;
+    background: #85BDBF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 80%;
 }
 .formCrearCompetencia{
     display: flex;
     top: 8rem;
     margin: auto;
     flex-direction: column;
-    background: #C2FCF7;
+    background: #85BDBF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 80%;
+}
+
+.formModal{
+    background: #85BDBF;
+    border-radius: 1rem;
+    padding: 1.5rem;
 }
 
 .modalOverlay{
@@ -72,8 +88,8 @@
         width: 50%;
         
     }
-    .formCrearCompetencia{
-        top: 15%;
+    .formCrearCompetencia, .formTiempo{
+        width: 60%;
     }
     .formModal{
         width: 60%;

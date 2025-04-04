@@ -6,7 +6,6 @@ import CreacionUsuario from './InicioSesiones/CreacionUsuario';
 import ConfAdm from './InicioSesiones/Configuracion';
 import CompetenciasCreadas from './SeccionesAdm/CompetenciasCreadas';
 import CrearCompetencia from './SeccionesAdm/CrearCompetencias';
-import Ganadores from './SeccionesAdm/Ganadores';
 import CompetenciasDisponibles from './SeccionesUsuarios/CompetenciasDisponibles';
 import CompetenciasFinalizadas from './SeccionesUsuarios/CompetenciasFinalizadas';
 import RegistroAthletas from './SeccionesUsuarios/RegistroAtletas';
@@ -29,7 +28,7 @@ function App() {
         <Route path='/adm/competencias' element={<CompetenciasCreadas  />} />
         <Route path='/adm/crearCompetencia' element={<CrearCompetencia  />} />
         <Route path='/adm/registroTiempoAthletas' element={<TiempoAtletas  />} />
-        <Route path='/adm/ganadores' element={<Ganadores  />} />
+        
         
         </Route>
       </Routes> 
