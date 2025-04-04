@@ -10,10 +10,10 @@ function Ganador({competencia, lugar, tiempo, nombre}){
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={foto} />
             <Card.Body>
-                <Card.Title>{competencia}</Card.Title>
+                <Card.Title>{competencia?.competencia}</Card.Title>
                 <Card.Text>{lugar}</Card.Text>
                 <Card.Text>{tiempo}</Card.Text>
-                <Card.Text>{nombre}</Card.Text>
+                <Card.Text>{nombre?.nombre}</Card.Text>
             </Card.Body>
         </Card>
        

@@ -9,7 +9,7 @@ const tiempoSchema = new mongoose.Schema({
   },
   nombre: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'RegisCompetencia',
+    ref: 'registroCompetencia',
     required: true
   },
   tiempo: {

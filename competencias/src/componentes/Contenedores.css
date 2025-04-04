@@ -15,15 +15,8 @@
 }
 .ganadores{
     position: relative;
-}.botonMas{
-    display: flex;
-    margin: auto;
-    padding: 1rem;
 }
 .imgIcon{
-    width: 2.5rem;
-}
-.imgMas{
     width: 2.5rem;
 }
 
@@ -46,7 +39,7 @@
     margin: auto;
     flex-direction: column;
     border-radius: 2rem;
-    padding: 1rem;
+    padding: 1.5rem;
     top: 7rem;
     margin-bottom: 2rem;
     
@@ -61,7 +54,7 @@
     }
     .enlaceC{
         font-size: 2rem;
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
     .contCCreadas .textoCompetencias{
         font-size: 1.8rem;
@@ -78,6 +71,13 @@
         width: 45%;
         top: 2rem;
     }
+    .imgIcon{
+        width: 2rem;
+    }
+    .enlaceC{
+        margin: 0.5rem;
+    }
+   
     .contCCreadas{
         width: 50%;
         padding-left: 4rem;
