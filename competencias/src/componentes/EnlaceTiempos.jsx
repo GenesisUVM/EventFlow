@@ -5,7 +5,7 @@ import './Contenedores.css'
 function EnlaceTiempos(){
     return(
         <div className='botonMas'>
-            <Link to={'/registroTiempoAthletas'}><img src={mas} alt='Simbolo mas' className='imgMas' /></Link>
+            <Link to={'/adm/registroTiempoAthletas'}><img src={mas} alt='Simbolo mas' className='imgMas' /></Link>
         </div>
     )
 };

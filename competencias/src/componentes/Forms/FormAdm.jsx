@@ -21,7 +21,7 @@ function FormAdm(){
         console.log("Usuario autenticado:", response.data);
         localStorage.setItem("user", JSON.stringify(response.data)); // Guardar usuario en localStorage
   
-        navigate("/crearCompetencia"); // Redirigir a página protegida
+        navigate("adm/crearCompetencia"); // Redirigir a página protegida
       } catch (error) {
         console.error("Error en login:", error);
         setError(error.response?.data?.message || "Error al iniciar sesión");

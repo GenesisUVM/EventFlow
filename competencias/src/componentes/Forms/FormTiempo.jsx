@@ -77,15 +77,7 @@ function FormTiempo() {
                 <Form.Control type="text" {...register('tiempo', { required: true })} />
                 {errors.tiempo && <p className="error">Este campo es obligatorio</p>}
             </Form.Group>
-            <Form.Group>
-            <Form.Label>Posición en la competencia</Form.Label>
-            <Form.Control 
-                type="number" 
-                {...register('posicion', { required: true })} 
-            />
-            {errors.posicion && <p className="error">Este campo es obligatorio</p>}
-        </Form.Group>
-
+            
             <Button type="submit" className="botonCrear">Registrar Tiempo</Button>
         </Form>
     );

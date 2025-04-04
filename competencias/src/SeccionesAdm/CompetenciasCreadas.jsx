@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import NavBar from '../componentes/NavBar';
-import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
 import './Adm.css'
 import FooterAdm from '../componentes/FooterAdm';
+import ContCompetenciasAdm from '../componentes/ContCompetenciasCAdm';
 
 //Componente seccion Administrativa
 
@@ -66,7 +66,7 @@ import FooterAdm from '../componentes/FooterAdm';
                     <h2 className='tituloCategorias'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h2>
                     {groupedCompetencias[categoria].length > 0 ? (
                         groupedCompetencias[categoria].map(item => (
-                            <ContCompetenciasCreadas 
+                            <ContCompetenciasAdm 
                                 key={item._id}
                                 competencia={item.competencia} 
                                 categoria={item.categoria} 

@@ -4,15 +4,14 @@ import mongoose from "mongoose";
 
 
 export const tiempo = async (req, res) => {
-    const {competencia, nombre, tiempo,posicion} = req.body;
+    const {competencia, nombre, tiempo} = req.body;
       
    try{
   
       const newTiempo = new Tiempo({
-         competencia: mongoose.Types.ObjectId(competencia), 
-         nombre: mongoose.Types.ObjectId(nombre), 
-         tiempo,
-         posicion
+         competencia: new mongoose.Types.ObjectId(competencia),
+         nombre: new mongoose.Types.ObjectId(nombre),
+         tiempo
          })
       
       const tiempoSaved = await newTiempo.save();
@@ -21,8 +20,7 @@ export const tiempo = async (req, res) => {
       res.json({
          competencia: tiempoSaved.competencia,
          nombre: tiempoSaved.nombre,
-         tiempo: tiempoSaved.tiempo,
-         posicion: tiempoSaved.posicion
+         tiempo: tiempoSaved.tiempo
         });
   
      

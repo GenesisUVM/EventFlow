@@ -8,7 +8,7 @@ function NavBar(){
     return(
         <Nav className="navBar">
             <h2 className='nombre'>Event Flow</h2>
-            <Link to={'/configuracion'}><img src={conf} className='icon' alt='icono configuracion'></img></Link>
+            <Link to={'/adm/configuracion'}><img src={conf} className='icon' alt='icono configuracion'></img></Link>
         </Nav>
     )
 };

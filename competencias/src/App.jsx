@@ -12,6 +12,7 @@ import CompetenciasFinalizadas from './SeccionesUsuarios/CompetenciasFinalizadas
 import RegistroAthletas from './SeccionesUsuarios/RegistroAtletas';
 import TiempoAtletas from './SeccionesAdm/TiemposAtletas';
 import ProtectedRoute from './hooks/ProtectedRoute';
+import RegistroAthletasAdm from './SeccionesAdm/RegistroAtletasAdm';
 
 function App() {
    return (
@@ -23,11 +24,12 @@ function App() {
         <Route path='/competenciasFinalizadas' element={<CompetenciasFinalizadas  />} />
         <Route path='/registroAthletas' element={<RegistroAthletas  />} />
         <Route element={<ProtectedRoute />}>
-        <Route path='/configuracion' element={<ConfAdm  />} />
-        <Route path='/competencias' element={<CompetenciasCreadas  />} />
-        <Route path='/crearCompetencia' element={<CrearCompetencia  />} />
-        <Route path='/registroTiempoAthletas' element={<TiempoAtletas  />} />
-        <Route path='/ganadores' element={<Ganadores  />} />
+        <Route path='/adm/configuracion' element={<ConfAdm  />} />
+        <Route path='/adm/registroAthletas' element={<RegistroAthletasAdm  />} />
+        <Route path='/adm/competencias' element={<CompetenciasCreadas  />} />
+        <Route path='/adm/crearCompetencia' element={<CrearCompetencia  />} />
+        <Route path='/adm/registroTiempoAthletas' element={<TiempoAtletas  />} />
+        <Route path='/adm/ganadores' element={<Ganadores  />} />
         
         </Route>
       </Routes> 

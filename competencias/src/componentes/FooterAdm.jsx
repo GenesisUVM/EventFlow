@@ -9,9 +9,9 @@ import Nav from 'react-bootstrap/Nav';
 function FooterAdm(){
     return(
         <Nav className="footerAdmi">
-            <Link to={'/crearCompetencia'} ><img src={enlace1} alt='Enlaces Vistas Perfiles Usuarios' className='linkIcons' /></Link>
-            <Link to={'/competencias'} ><img src={enlace2} alt='Enlaces Vistas Perfiles Usuarios' className='linkIcons' /></Link>
-            <Link to={'/ganadores'} ><img src={enlace3} alt='Enlaces Vistas Perfiles Usuarios' className='linkIcons' /></Link>
+            <Link to={'/adm/crearCompetencia'} ><img src={enlace1} alt='Enlaces Vistas Perfiles Usuarios' className='linkIcons' /></Link>
+            <Link to={'/adm/competencias'} ><img src={enlace2} alt='Enlaces Vistas Perfiles Usuarios' className='linkIcons' /></Link>
+            <Link to={'/adm/ganadores'} ><img src={enlace3} alt='Enlaces Vistas Perfiles Usuarios' className='linkIcons' /></Link>
         </Nav>
     )
 };
